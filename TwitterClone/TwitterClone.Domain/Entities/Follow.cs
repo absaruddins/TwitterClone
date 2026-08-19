@@ -4,18 +4,16 @@ using System.Text;
 
 namespace TwitterClone.Domain.Entities
 {
-    public class Follow
+    public class Follow : BaseEntity
     {
-        private Guid _id;
+      
         private Guid _userId;
         private Guid _followerId;
         private Guid _followingId;
         private DateTime _followedAt;
 
-        public Follow()
+        public Follow() : base(Guid.NewGuid())
         {
-            _id = Guid.NewGuid();
-
         }
         public Guid UserId { get; set; }
         public Guid FollowerId { get; set; }
