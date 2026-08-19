@@ -1,0 +1,1 @@
+"I am learning OOP in .NET. First, I learned encapsulation and inheritance. These are the basics of OOP. After that, I will learn abstraction, polymorphism, and so on. Day by day, I am trying to improve my OOP skills.".
