@@ -18,7 +18,7 @@ namespace TwitterClone.Domain.Entities
             Id = id;
             CreatedAt = DateTime.UtcNow;
         }
-
+        //override
         public virtual string DescribeRecord()
         {
             return $"BaseEntity : Id: {Id} ,CreatAt: {CreatedAt},ModifiedAt: {ModifiedAt},CreateBy: {CreatedBy},ModifiedBy: {ModifiedBy}";
