@@ -2,7 +2,7 @@
 namespace TwitterClone.Domain.Entities
 {
     //using inherite ,child class User from parent class BaseEntity
-    public class User : BaseEntity
+    public class User : BaseEntity, IFollowable,INotifiable
     {
         //constructor chianing
         public User() : base(Guid.NewGuid())
@@ -13,6 +13,7 @@ namespace TwitterClone.Domain.Entities
         private string _firstName;
         private string _lastName;
         private string _email;
+
        
        
         
@@ -28,6 +29,25 @@ namespace TwitterClone.Domain.Entities
             set { _lastName = value ; }
 
         }
-      
+        public string Email { get;set }
+
+        private List<Guid>_followers = new List<Guid>();
+
+        public void Follow(Guid userId)
+        {
+            if (!_followers.Contains(userId))
+            {
+                _followers.Add(userId);
+            }
+
+        }
+        public void Unfollow(Guid userId)
+        {
+            if (_followers.Contains(userId))
+            {
+                _followers.Add(userId);
+            }
+        }
+
     }
 }
