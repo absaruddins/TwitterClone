@@ -6,6 +6,7 @@ namespace TwitterClone.Domain.Entities
 {
     public class LikeNotification : Notification
     {
+        //sealed, add kori public  er pore, LikeNotification ke inherite kora jabe na
         public LikeNotification(Guid likeByUserId) : base("Like")
         { 
             LikeByUserId = likeByUserId;
@@ -16,13 +17,17 @@ namespace TwitterClone.Domain.Entities
         {
             Message = message;
         }
-
+        //eka override korsi
         public override string DescribeRecord()
 
         {
             var baseRecord = base.DescribeRecord();
-            return $"{baseRecord} - Notification Type: {Type} ,Message: {Message},IsRead: {IsRead},LikeByUserId: {LikeByUserId}";
+            return $"{baseRecord}, LikeByUserId: {LikeByUserId}";
 
+        }
+        public override string GetMessage()
+        {
+            return $"User with ID {LikeByUserId} liked your post";
         }
     }
 }
