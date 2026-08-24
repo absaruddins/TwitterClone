@@ -22,7 +22,7 @@ using TwitterClone.Domain.Entities;
 
 
 //opor er gola loop use kore kora jai,upcasting er maddome
-
+//eta ke abar run time polymorphism bole
 var notifications = new List<Notification>() //upcasting ,array er moto
 {
     new LikeNotification(Guid.NewGuid()),
